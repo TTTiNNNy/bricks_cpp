@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(bricks)
+set(SOURCE_LIB lib.cpp)
+add_library(bricks STATIC ${SOURCE_LIB})
+add_executable(lib_test test.cpp)
+target_link_libraries(lib_test bricks)
+enable_testing()
+add_test(NAME lib_test COMMAND lib_test)
